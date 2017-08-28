@@ -1,5 +1,3 @@
-#Get Started
-
 ##Run Seeds DB
 ###php artisan migrate:refresh --seed
 
