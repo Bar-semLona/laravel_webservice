@@ -21,6 +21,6 @@ Route::post('/login', 'AuthController@login');
 
 // Protected Routes
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::resource('post', 'APIController');
+    Route::resource('/events', 'EventsController');
 });
 

@@ -18,9 +18,10 @@ class UsersTableSeeder extends Seeder
         // Seed User Default
         DB::table('users')->insert([
             'name'      => 'Vinicius Oliveira',
-            'email'     => 'vinicis_o.a@live.com',
+            'email'     => 'vinicius_o.a@live.com',
             'password'  => Hash::make('123456'),
-            'api_token' => str_random(60)
+            'api_token' => str_random(60),
+            'created_at' => $faker->dateTime($max = 'now', $timezone = date_default_timezone_get())
         ]);
         
         // Seed Users
@@ -30,7 +31,8 @@ class UsersTableSeeder extends Seeder
                 'name'      => $faker->name,
                 'email'     => $faker->email,
                 'password'  => bcrypt('secret'),
-                'api_token' => str_random(60)
+                'api_token' => str_random(60),
+                'created_at' => $faker->dateTime($max = 'now', $timezone = date_default_timezone_get())
             ]);
         }
     }

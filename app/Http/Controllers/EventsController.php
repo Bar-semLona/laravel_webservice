@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use App\IEvent;
 
-class APIController extends Controller
+class EventsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class APIController extends Controller
      */
      public function index()
      {
-        $posts = Post::all();
-        return response()->json($posts);
+        $events = IEvent::all();
+        return response()->json($events);
      }
 
     /**

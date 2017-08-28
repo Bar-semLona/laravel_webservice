@@ -34,10 +34,10 @@ class AuthController extends Controller
                 if(Hash::check($request->input('password'), $user->password)) {
                     return response()->json(['success'=>200]);
                 }else{
-                    return response()->json(['success'=>401]);
+                    return response()->json(['error'=>401]);
                 }
             }else{
-                return response()->json(['success'=>404]);
+                return response()->json(['error'=>404]);
             }
         }
     }
