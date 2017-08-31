@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
         ]);
         
         // Seed Users
-    	foreach (range(1,10) as $index) {
+    	foreach (range(1,50) as $index) {
             DB::table('users')->insert([
                 'name'      => $faker->name,
                 'email'     => $faker->email,

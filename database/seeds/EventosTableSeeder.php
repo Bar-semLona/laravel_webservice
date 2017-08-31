@@ -16,8 +16,8 @@ class EventosTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $user = User::find(1);
-    	foreach (range(1,10) as $index) {
+    	foreach (range(1,50) as $index) {
+            $user = User::find(rand(1,50));
             DB::table('eventos')->insert([
                 'idUsuarioCriacao' => $user->id,
                 'name'   => $faker->text($maxNbChars = 75),
