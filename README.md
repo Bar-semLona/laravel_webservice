@@ -11,8 +11,8 @@ Project developed for the TSI course.
 
 ## Get in Started
 
-Running a Seeds DB
-php artisan migrate:refresh --seed
+## Running a Seeds DB
+* php artisan migrate:refresh --seed
 
 ### How to use REST Resources
 
@@ -35,7 +35,7 @@ php artisan migrate:refresh --seed
     }
 
 ### Return a JSON object with all data events
-* Route => http://localhost:8000/api/events?api_token=FogPvAbPKFq0JrQ1zcNw0AH6R0K5Ou6MUBSHCeDDDxBjwgr4oPCIe2V46NSG
+* Route => http://localhost:8000/api/events?api_token=SECRET-USER-TOKEN
 
     * Resource Params {
     	Base URI: http://localhost:8000/api/
@@ -43,6 +43,15 @@ php artisan migrate:refresh --seed
     	api_token: (User Logged in Token)
     }
 
+* Register New Event:
+    * Route => http://localhost:8000/api/events
+    * Making a Json POST Request
+    * {
+        "title":"sample event",
+        "body":"sample body event text",
+        "user_id":"1",
+        "api_token":"SECRET-USER-TOKEN"
+    }
 ## License
 
 This project is licensed under the MIT License.

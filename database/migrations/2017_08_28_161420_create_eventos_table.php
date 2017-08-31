@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateEventosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,20 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('eventos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idUsuarioCriacao')->unsigned();
+            $table->foreign('idUsuarioCriacao')
+            ->references('id')->on('users')
+            ->onDelete('cascade');
+            
             $table->string('name', 100);
-            $table->string('email', 100)->unique();
-            $table->string('password', 100);
-            $table->string('api_token', 60)->unique();
-            $table->datetime('dataDeNascimento');
+            $table->text('descEvento');
+            $table->string('site', 100);
             $table->string('facebook', 200);
             $table->string('instagram', 200);
+            $table->datetime('dataInicial');
+            $table->datetime('dataFinal');
             $table->string('CEP', 10);
             $table->string('endereco', 100);
             $table->string('numeroEndereco', 10);
@@ -29,10 +34,11 @@ class CreateUsersTable extends Migration
             $table->string('bairro', 50);
             $table->string('cidade', 50);
             $table->char('UF', 2);
-            $table->string('numeroCelular', 14);
+            $table->string('faixaEtaria', 20);
+            $table->integer('like');
+            $table->integer('deslike');
             $table->binary('img');
             $table->boolean('ativo');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -44,6 +50,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('eventos');
     }
 }
