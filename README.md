@@ -17,7 +17,7 @@ Project developed for the TSI course.
 ### How to use REST Resources
 
 * Register New User:
-    * Route => http://127.0.0.1:8000/api/register
+    * Route => http://tsi.api.viniciusoliveira.org/public/api/register
     * Making a Json POST Request
     * {
     	"name":"Vinicius Oliveira",
@@ -27,7 +27,7 @@ Project developed for the TSI course.
 
 
 ### Login with a registered User:
-* Route => http://127.0.0.1:8000/api/login
+* Route => http://tsi.api.viniciusoliveira.org/public/api/login
     * Making a Json POST Request
     * {
     	"email":"vinicius_o.a@live.com",
@@ -35,7 +35,7 @@ Project developed for the TSI course.
     }
 
 ### Return a JSON object with all data events
-* Route => http://localhost:8000/api/events?api_token=SECRET-USER-TOKEN
+* Route => http://tsi.api.viniciusoliveira.org/public/api/events?api_token=SECRET-USER-TOKEN
 
     * Resource Params {
     	Base URI: http://localhost:8000/api/
@@ -44,7 +44,7 @@ Project developed for the TSI course.
     }
 
 * Register New Event:
-    * Route => http://localhost:8000/api/events
+    * Route => http://tsi.api.viniciusoliveira.org/public/api/events
     * Making a Json POST Request
     * {
         "title":"sample event",
